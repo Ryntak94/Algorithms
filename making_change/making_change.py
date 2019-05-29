@@ -10,8 +10,9 @@ def making_change(amount, denominations):
   else:
       res = 0
       for i in range(0, len(denominations)):
-          if making_change(amount-denominations[len(denominations)-1-i], denominations[0:len(denominations)-i]) != 0:
-              res += making_change(amount-denominations[len(denominations)-1-i], denominations[0:len(denominations)-i])
+          change = making_change(amount-denominations[len(denominations)-1-i], denominations[0:len(denominations)-i])
+          if change != 0:
+              res += change
   return res
 
 if __name__ == "__main__":
